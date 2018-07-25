@@ -1,0 +1,6 @@
+module Pods_SimpleUserDefaults_Example {
+  umbrella header "Pods-SimpleUserDefaults_Example-umbrella.h"
+
+  export *
+  module * { export * }
+}

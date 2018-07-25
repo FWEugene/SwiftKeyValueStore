@@ -1,0 +1,29 @@
+{
+  "name": "SimpleUserDefaults",
+  "version": "0.0.1",
+  "license": {
+    "type": "MIT",
+    "file": "LICENSE"
+  },
+  "summary": "Type Safe API for Key Value storage.",
+  "description": "Type Safe API for Key Value storage. For example UserDefsults.",
+  "homepage": "http://futureworkshops.com",
+  "authors": {
+    "Yevgeniy Prokoshev": "yevgeniy@futureworkshops.com"
+  },
+  "platforms": {
+    "ios": "11.0"
+  },
+  "source": {
+    "path": "."
+  },
+  "requires_arc": true,
+  "swift_version": "4.0",
+  "cocoapods_version": ">= 1.5.0",
+  "source_files": "Source/**/*.swift",
+  "dependencies": {
+    "SwiftKeychainWrapper": [
+
+    ]
+  }
+}

@@ -1,0 +1,6 @@
+module Pods_SimpleUserDefaults_ExampleTests {
+  umbrella header "Pods-SimpleUserDefaults_ExampleTests-umbrella.h"
+
+  export *
+  module * { export * }
+}
