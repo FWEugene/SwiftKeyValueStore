@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 46;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -69,10 +69,10 @@
 /* Begin PBXFileReference section */
 		00A94E1A7FE9B0A73F14CCFE5009B0FA /* Pods-SimpleUserDefaults_ExampleTests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-SimpleUserDefaults_ExampleTests-acknowledgements.plist"; sourceTree = "<group>"; };
 		01844CC4E8EDD8D98851D4D36E2222E3 /* Pods-SimpleUserDefaults_Example-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-SimpleUserDefaults_Example-acknowledgements.markdown"; sourceTree = "<group>"; };
-		019623B75F482B4BDEFBD331FD7D1699 /* libPods-SimpleUserDefaults_ExampleTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = "libPods-SimpleUserDefaults_ExampleTests.a"; path = "libPods-SimpleUserDefaults_ExampleTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		019623B75F482B4BDEFBD331FD7D1699 /* libPods-SimpleUserDefaults_ExampleTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-SimpleUserDefaults_ExampleTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		0578A41230DEE11DB5ABD70ED4DC634B /* KeychainWrapper.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = KeychainWrapper.swift; path = SwiftKeychainWrapper/KeychainWrapper.swift; sourceTree = "<group>"; };
 		1003F30322A56FC41A5EADDD06EBAA5A /* SwiftKeychainWrapper-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SwiftKeychainWrapper-prefix.pch"; sourceTree = "<group>"; };
-		140BEA05268BDF92A2C5EAE28BC6B0FF /* libPods-SimpleUserDefaults_Example.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = "libPods-SimpleUserDefaults_Example.a"; path = "libPods-SimpleUserDefaults_Example.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		140BEA05268BDF92A2C5EAE28BC6B0FF /* libPods-SimpleUserDefaults_Example.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-SimpleUserDefaults_Example.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		1586633C9C4AC46F4512E001DFB21532 /* Pods-SimpleUserDefaults_ExampleTests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-SimpleUserDefaults_ExampleTests.modulemap"; sourceTree = "<group>"; };
 		18D78A2101275C53B427F941A991C3FD /* SwiftKeyValueStore.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; name = SwiftKeyValueStore.modulemap; path = ../../Headers/Public/SwiftKeyValueStore/SwiftKeyValueStore.modulemap; sourceTree = "<group>"; };
 		1B3A847971436CE40B4676AAFB5DAA7A /* SwiftKeychainWrapper.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; name = SwiftKeychainWrapper.modulemap; path = ../../Headers/Public/SwiftKeychainWrapper/SwiftKeychainWrapper.modulemap; sourceTree = "<group>"; };
@@ -87,18 +87,19 @@
 		53578A054AE18C2E3F24D7F738BA92A1 /* Pods-SimpleUserDefaults_Example-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-SimpleUserDefaults_Example-acknowledgements.plist"; sourceTree = "<group>"; };
 		53900E761238128380D007906F6E0A86 /* Pods-SimpleUserDefaults_ExampleTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-SimpleUserDefaults_ExampleTests.release.xcconfig"; sourceTree = "<group>"; };
 		563C213642DDF26B65842DF4BEEC7590 /* UserDefaults+KeyValueStore.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "UserDefaults+KeyValueStore.swift"; sourceTree = "<group>"; };
+		57F9A44E210A1869002115E6 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		5B762BDDAB2E050B0E04327525AC2CD8 /* SwiftKeychainWrapper-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "SwiftKeychainWrapper-dummy.m"; sourceTree = "<group>"; };
 		639D5568900A35FDD1D1836828742226 /* Pods-SimpleUserDefaults_ExampleTests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-SimpleUserDefaults_ExampleTests-frameworks.sh"; sourceTree = "<group>"; };
-		6A268620132A0AE873DFCA360CFDD246 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; path = LICENSE; sourceTree = "<group>"; };
+		6A268620132A0AE873DFCA360CFDD246 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		6FE4C4E88CA143931CF40D540865646A /* Pods-SimpleUserDefaults_ExampleTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-SimpleUserDefaults_ExampleTests.debug.xcconfig"; sourceTree = "<group>"; };
-		7680F93EADD41C55DFAF6ACC7875A272 /* libSwiftKeychainWrapper.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = libSwiftKeychainWrapper.a; path = libSwiftKeychainWrapper.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		7680F93EADD41C55DFAF6ACC7875A272 /* libSwiftKeychainWrapper.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libSwiftKeychainWrapper.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		76F42A5BF20ADBA25D8CD7CDE145FBEA /* SwiftKeyValueStore.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SwiftKeyValueStore.xcconfig; sourceTree = "<group>"; };
 		78EF988095E04B89D743902DC5DEC1EE /* Pods-SimpleUserDefaults_ExampleTests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-SimpleUserDefaults_ExampleTests-acknowledgements.markdown"; sourceTree = "<group>"; };
 		7E991825D1BE2CBDB4C2CA1686FD3C9F /* KeyChainWrapper+KeyValueStore.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "KeyChainWrapper+KeyValueStore.swift"; sourceTree = "<group>"; };
 		859B562C33DFF443DF36C94593BCB6F1 /* SwiftKeyValueStore-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "SwiftKeyValueStore-umbrella.h"; path = "../../Headers/Public/SwiftKeyValueStore/SwiftKeyValueStore-umbrella.h"; sourceTree = "<group>"; };
 		91D9D982BEDC794D89D67A3D584207D0 /* Pods-SimpleUserDefaults_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-SimpleUserDefaults_Example.release.xcconfig"; sourceTree = "<group>"; };
-		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		94319EF8A9B98A20B8F0CEDB7A5EC600 /* SwiftKeyValueStore.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; path = SwiftKeyValueStore.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		94319EF8A9B98A20B8F0CEDB7A5EC600 /* SwiftKeyValueStore.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; path = SwiftKeyValueStore.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		957EDC407C1EE2F41C828D780AC2053F /* Pods-SimpleUserDefaults_Example-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-SimpleUserDefaults_Example-resources.sh"; sourceTree = "<group>"; };
 		9969E08583BC9834D9CFF0C24262CEED /* SwiftKeyValueStore-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "SwiftKeyValueStore-dummy.m"; sourceTree = "<group>"; };
 		9B0DBC2D489639DF66D76052808EB4F8 /* SwiftKeychainWrapper-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "SwiftKeychainWrapper-umbrella.h"; path = "../../Headers/Public/SwiftKeychainWrapper/SwiftKeychainWrapper-umbrella.h"; sourceTree = "<group>"; };
@@ -110,7 +111,7 @@
 		D78BABAA880F5BA0B3587D9DB4B3AF6A /* SwiftKeyValueStore-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SwiftKeyValueStore-prefix.pch"; sourceTree = "<group>"; };
 		DAB18042B475A0C4E5846B61D77FD66E /* SwiftKeychainWrapper.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SwiftKeychainWrapper.h; path = SwiftKeychainWrapper/SwiftKeychainWrapper.h; sourceTree = "<group>"; };
 		E10EED269EF3D8744A1782F3167A62A3 /* KeychainItemAccessibility.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = KeychainItemAccessibility.swift; path = SwiftKeychainWrapper/KeychainItemAccessibility.swift; sourceTree = "<group>"; };
-		E5F64E57C8A972F3D185A97CFD941D22 /* libSwiftKeyValueStore.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = libSwiftKeyValueStore.a; path = libSwiftKeyValueStore.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		E5F64E57C8A972F3D185A97CFD941D22 /* libSwiftKeyValueStore.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libSwiftKeyValueStore.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		EBA1996BB8FFCED9FA8C78F5E221BEFB /* Pods-SimpleUserDefaults_ExampleTests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-SimpleUserDefaults_ExampleTests-umbrella.h"; sourceTree = "<group>"; };
 		F1C99F3C53DF110E42B3AD339A3539D3 /* KeyValueStore+Implementation.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "KeyValueStore+Implementation.swift"; path = "Source/KeyValueStore+Implementation.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -191,7 +192,6 @@
 				DAB18042B475A0C4E5846B61D77FD66E /* SwiftKeychainWrapper.h */,
 				9A16FDE68BDF65594EDA55705AF0CCB8 /* Support Files */,
 			);
-			name = SwiftKeychainWrapper;
 			path = SwiftKeychainWrapper;
 			sourceTree = "<group>";
 		};
@@ -270,7 +270,6 @@
 				3E1F74FA9C343D6F80AC006290188C12 /* KeyChainWrapper+KeyValuePersistentStorage.swift */,
 				7E991825D1BE2CBDB4C2CA1686FD3C9F /* KeyChainWrapper+KeyValueStore.swift */,
 			);
-			name = SwiftKeyChainWrapper;
 			path = SwiftKeyChainWrapper;
 			sourceTree = "<group>";
 		};
@@ -310,7 +309,6 @@
 				2456C41D88DC7D4D833DA604A8A560D3 /* UserDefaults+KeyValuePersistentStorage.swift */,
 				563C213642DDF26B65842DF4BEEC7590 /* UserDefaults+KeyValueStore.swift */,
 			);
-			name = UserDefaults;
 			path = UserDefaults;
 			sourceTree = "<group>";
 		};
@@ -323,6 +321,7 @@
 				4FC0BFDC37DE477F3E7204624DD58A30 /* Pod */,
 				7ADCE68DD58C22718F31B91B0262D8E2 /* Protocols */,
 				B08554361B184AC73CF3765DB853B2D4 /* Support Files */,
+				57F9A44E210A1869002115E6 /* README.md */,
 			);
 			name = SwiftKeyValueStore;
 			path = /Users/yevgeniy/Documents/Work/SwiftKeyValueStore;
@@ -500,7 +499,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "COMPATIBILITY_HEADER_PATH=\"${BUILT_PRODUCTS_DIR}/Swift Compatibility Header/${PRODUCT_MODULE_NAME}-Swift.h\"\nMODULE_MAP_PATH=\"${BUILT_PRODUCTS_DIR}/${PRODUCT_MODULE_NAME}.modulemap\"\n\nditto \"${DERIVED_SOURCES_DIR}/${PRODUCT_MODULE_NAME}-Swift.h\" \"${COMPATIBILITY_HEADER_PATH}\"\nditto \"${PODS_ROOT}/Headers/Public/SwiftKeyValueStore/SwiftKeyValueStore.modulemap\" \"${MODULE_MAP_PATH}\"\nditto \"${PODS_ROOT}/Headers/Public/SwiftKeyValueStore/SwiftKeyValueStore-umbrella.h\" \"${BUILT_PRODUCTS_DIR}\"\nprintf \"\\n\\nmodule ${PRODUCT_MODULE_NAME}.Swift {\\n  header \\\"${COMPATIBILITY_HEADER_PATH}\\\"\\n  requires objc\\n}\\n\" >> \"${MODULE_MAP_PATH}\"\n";
-			showEnvVarsInLog = 1;
 		};
 		2F08DA787D3973B7348C5C1CE50888D8 /* Copy generated compatibility header */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -521,7 +519,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "COMPATIBILITY_HEADER_PATH=\"${BUILT_PRODUCTS_DIR}/Swift Compatibility Header/${PRODUCT_MODULE_NAME}-Swift.h\"\nMODULE_MAP_PATH=\"${BUILT_PRODUCTS_DIR}/${PRODUCT_MODULE_NAME}.modulemap\"\n\nditto \"${DERIVED_SOURCES_DIR}/${PRODUCT_MODULE_NAME}-Swift.h\" \"${COMPATIBILITY_HEADER_PATH}\"\nditto \"${PODS_ROOT}/Headers/Public/SwiftKeychainWrapper/SwiftKeychainWrapper.modulemap\" \"${MODULE_MAP_PATH}\"\nditto \"${PODS_ROOT}/Headers/Public/SwiftKeychainWrapper/SwiftKeychainWrapper-umbrella.h\" \"${BUILT_PRODUCTS_DIR}\"\nprintf \"\\n\\nmodule ${PRODUCT_MODULE_NAME}.Swift {\\n  header \\\"${COMPATIBILITY_HEADER_PATH}\\\"\\n  requires objc\\n}\\n\" >> \"${MODULE_MAP_PATH}\"\n";
-			showEnvVarsInLog = 1;
 		};
 /* End PBXShellScriptBuildPhase section */
 
