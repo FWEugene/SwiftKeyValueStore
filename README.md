@@ -86,8 +86,10 @@ DefaultsKeyValueStore[colorKey] = "red"
 DefaultsKeyValueStore[colorKey] // => UIColor.red, typed as UIColor?
 
 // store securely in KeyChain
-KeychainKeyValueStore[userKey] = User(firstName: "Yuriy", lastName: "Gagarin") // struct User has to conform `Codable` protocol 
-KeychainKeyValueStore[userKey] // => (firstName: "Yuriy", lastName: "Gagarin"), typed as User?
+KeychainKeyValueStore[userKey] = User(firstName: "Yuriy", 
+                                      lastName: "Gagarin") // struct User has to conform `Codable` protocol 
+KeychainKeyValueStore[userKey] // => (firstName: "Yuriy", 
+                                      lastName: "Gagarin"), typed as User?
 ```
 
 The compiler would not let you to set a wrong value type, and alwasy returns expected optional type.
@@ -141,7 +143,8 @@ class UserProfileView: UIView, NSCoding  {
 
 ```swift
 let counter = KeyValueStoreKey<Int>("counterKey", defaultValue: 0)
-let user = KeyValueStoreKey<User>("token", defaultValue: User(firstName: "Anakin" lastName: "Skywalker"))
+let user = KeyValueStoreKey<User>("token", defaultValue: User(firstName: "Anakin", 
+                                                              lastName: "Skywalker"))
 ```
 
 
