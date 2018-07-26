@@ -15,12 +15,12 @@
 Step 1: Chose Storage type `UserDefaults`. Use `standard` shared instance or create new instance. 
 
 ```swift
-    var DefaultsKeyValueStore = UserDefaults.standard
+var DefaultsKeyValueStore = UserDefaults.standard
 ```
 
 Or encrypted storage in `KeyChain`. Use `standard` shared instance or create new instance. 
 ```swift
-    var KeychainKeyValueStore = KeychainWrapper.standard
+var KeychainKeyValueStore = KeychainWrapper.standard
 ```
 
 Step 2: Define your keys.  
