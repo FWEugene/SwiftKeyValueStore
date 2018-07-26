@@ -3,6 +3,7 @@
 ![Swift version](https://img.shields.io/badge/swift-4.0-orange.svg)
 
 #### Type-Safe Swift API for Key-Value Store database. 
+
 ###### SwiftKeyValueStore is an extention for UserDefaults and SwiftKeychainWrapper to provide simple, type-safe, expressive Swifty API with the benefits of static typing. Chose what type of the database you want to use - unencrypted `UserDefaults` or encrypted storage in `KeyChain`. Define your keys in one place, use value types easily, and get extra safety and convenient compile-time checks for free.
 
 
@@ -10,6 +11,7 @@
 ### Features
 
 **There's only two steps to using SwiftKeyValueStore:**
+
 Step 1: Chose Storage type `UserDefaults`. Use `standard` shared instance or create new instance. 
 
 ```swift
