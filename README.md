@@ -1,7 +1,6 @@
 # SwiftKeyValueStore
 
-[![CocoaPods](http://img.shields.io/cocoapods/v/SwiftyUserDefaults.svg)](https://cocoapods.org/pods/SwiftyUserDefaults)
-![Swift version](https://img.shields.io/badge/swift-4.1-orange.svg)
+![Swift version](https://img.shields.io/badge/swift-4.0-orange.svg)
 
 #### Type-Safe Swift API for Key-Value Store database. 
 ###### SwiftKeyValueStore is an extention for UserDefaults and SwiftKeychainWrapper to provide simple, type-safe, expressive Swifty API with the benefits of static typing. Chose what type of the database you want to use - unencrypted `UserDefaults` or encrypted storage in `KeyChain`. Define your keys in one place, use value types easily, and get extra safety and convenient compile-time checks for free.
@@ -14,20 +13,20 @@
 Step 1: Chose Storage type `UserDefaults`. Use `standard` shared instance or create new instance. 
 
 ```swift
-var DefaultsKeyValueStore = UserDefaults.standard
+    var DefaultsKeyValueStore = UserDefaults.standard
 ```
 
 Or encrypted storage in `KeyChain`. Use `standard` shared instance or create new instance. 
 ```swift
-var KeychainKeyValueStore = KeychainWrapper.standard
+    var KeychainKeyValueStore = KeychainWrapper.standard
 ```
 
 Step 2: Define your keys.  
 
 ```swift
 extension KeyValueStoreKeys {
-static let userName = KeyValueStoreKey<String>("UserNameKey")
-static let onboardingIsEnabled = KeyValueStoreKey<Bool>("OnboardingIsEnabledKey")
+    static let userName = KeyValueStoreKey<String>("UserNameKey")
+    static let onboardingIsEnabled = KeyValueStoreKey<Bool>("OnboardingIsEnabledKey")
 }
 ```
 
@@ -101,8 +100,8 @@ SwiftKeyValueStore supports all of the standard `NSUserDefaults` types, like str
 `SwiftKeyValueStore` support `Codable`. Just add `Codable` protcol conformance to your type, like:
 ```swift
 struct User: Codable {
-let firstName: String
-let lastName: String
+    let firstName: String
+    let lastName: String
 }
 ```
 
@@ -116,23 +115,23 @@ let users = KeyValueStoreKey<[User]>("users")
 `SwiftKeyValueStore` support `NSCoding`. Just add `NSCoding` protcol conformance to your type and implement required methods:
 ```swift
 class UserProfileView: UIView, NSCoding  {
-let userID: String
+    let userID: String
 
-init(frame: CGRect, id: String) {
-self.userID = id
-super.init(frame: frame)
-}
+    init(frame: CGRect, id: String) {
+        self.userID = id
+        super.init(frame: frame)
+    }
 
-override func encode(with aCoder: NSCoder) {
-aCoder.encode(userID, forKey: "UserProfileView.Id")
-super.encode(with: aCoder)
-}
+    override func encode(with aCoder: NSCoder) {
+        aCoder.encode(userID, forKey: "UserProfileView.Id")
+        super.encode(with: aCoder)
+    }
 
-required init?(coder aDecoder: NSCoder) {
-guard let id = aDecoder.decodeObject(forKey: "UserProfileView.Id") as? String else { return nil }
-self.userID = id
-super.init(coder: aDecoder)
-}
+    required init?(coder aDecoder: NSCoder) {
+        guard let id = aDecoder.decodeObject(forKey: "UserProfileView.Id") as? String else { return nil }
+        self.userID = id
+        super.init(coder: aDecoder)
+    }
 }
 ```
 
