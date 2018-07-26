@@ -2,7 +2,8 @@
 platform :ios, '11.0'
 
 def pods
-    pod 'SimpleUserDefaults', :path => '../'
+    pod 'SwiftKeyValueStore', :path => '/Users/yevgeniy/Documents/Work/SwiftKeyValueStore/'
+#    :git => 'https://github.com/FWEugene/SwiftKeyValueStore.git'
 end
 
 target 'SimpleUserDefaults_Example' do

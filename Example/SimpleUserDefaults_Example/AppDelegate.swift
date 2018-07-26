@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import SimpleUserDefaults
+
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 

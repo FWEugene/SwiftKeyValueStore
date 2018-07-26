@@ -1,6 +1,0 @@
-module SimpleUserDefaults {
-  umbrella header "SimpleUserDefaults-umbrella.h"
-
-  export *
-  module * { export * }
-}

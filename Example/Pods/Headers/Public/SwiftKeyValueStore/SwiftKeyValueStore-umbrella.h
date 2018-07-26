@@ -11,6 +11,6 @@
 #endif
 
 
-FOUNDATION_EXPORT double SimpleUserDefaultsVersionNumber;
-FOUNDATION_EXPORT const unsigned char SimpleUserDefaultsVersionString[];
+FOUNDATION_EXPORT double SwiftKeyValueStoreVersionNumber;
+FOUNDATION_EXPORT const unsigned char SwiftKeyValueStoreVersionString[];
 

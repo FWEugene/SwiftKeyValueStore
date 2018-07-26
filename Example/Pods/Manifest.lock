@@ -1,23 +1,23 @@
 PODS:
-  - SimpleUserDefaults (0.0.1):
-    - SwiftKeychainWrapper
   - SwiftKeychainWrapper (3.0.1)
+  - SwiftKeyValueStore (0.1.0):
+    - SwiftKeychainWrapper
 
 DEPENDENCIES:
-  - SimpleUserDefaults (from `../`)
+  - SwiftKeyValueStore (from `/Users/yevgeniy/Documents/Work/SwiftKeyValueStore/`)
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - SwiftKeychainWrapper
 
 EXTERNAL SOURCES:
-  SimpleUserDefaults:
-    :path: "../"
+  SwiftKeyValueStore:
+    :path: "/Users/yevgeniy/Documents/Work/SwiftKeyValueStore/"
 
 SPEC CHECKSUMS:
-  SimpleUserDefaults: 588ce34a0084cac68c34710fecc28bfb9d113fcf
   SwiftKeychainWrapper: 38952a3636320ae61bad3513cadd870929de7a4a
+  SwiftKeyValueStore: d9f7dabde36145ff15b90dd836f6b2289b3abc94
 
-PODFILE CHECKSUM: 409e9c286b2de01f12859935744eaf4dfee72d9f
+PODFILE CHECKSUM: c7dd683691ece130a7b6f594640effa65fc24bae
 
 COCOAPODS: 1.5.3

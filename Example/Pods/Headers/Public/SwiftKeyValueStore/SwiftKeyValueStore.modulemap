@@ -1,0 +1,6 @@
+module SwiftKeyValueStore {
+  umbrella header "SwiftKeyValueStore-umbrella.h"
+
+  export *
+  module * { export * }
+}

@@ -14,10 +14,10 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "C99783F1A1214B956B0DEB19BD3FFE16"
-               BlueprintName = "SimpleUserDefaults"
+               BlueprintIdentifier = "8695B4218E8B8D85F4179417AD24E841"
+               BlueprintName = "SwiftKeyValueStore"
                ReferencedContainer = "container:Pods.xcodeproj"
-               BuildableName = "libSimpleUserDefaults.a">
+               BuildableName = "libSwiftKeyValueStore.a">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
