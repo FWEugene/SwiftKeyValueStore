@@ -7,7 +7,8 @@
 //
 
 import XCTest
-@testable import SimpleUserDefaults
+@testable import SwiftKeyValueStore
+
 
 class Profile: NSObject, NSCoding {
     
@@ -45,21 +46,42 @@ struct MyStruct: Codable, Hashable  {
 }
 
 
+class ProfileView: UIView {
+    var viewId: String
+    
+    init(frame: CGRect, id: String) {
+        self.viewId = id
+        super.init(frame: frame)
+    }
+    
+    override func encode(with aCoder: NSCoder) {
+        aCoder.encode(viewId, forKey: "ProfileView.Id")
+        super.encode(with: aCoder)
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        guard let id = aDecoder.decodeObject(forKey: "ProfileView.Id") as? String else { return nil }
+        self.viewId = id
+        super.init(coder: aDecoder)
+    }
+}
+
 private var DefaultsKeyValueStore = UserDefaults.standard
 
 class SimpleUserDefaults_ExampleTests: XCTestCase {
     
     func testCodableStruct() {
-        let structKey = KeyValueStoreKey<MyStruct>(stringLiteral: "structValue")
+        let structKey = KeyValueStoreKey<MyStruct>("structValue")
 
         let user = MyStruct(name: "asd", secondName: "asdasd", codable: AnotherStruct(name: "asdad", secondName: "asdasd"))
         DefaultsKeyValueStore.save(user, forKey: structKey)
 
         XCTAssert(DefaultsKeyValueStore.get(forKey: structKey) == user)
+        
     }
     
     func testInt() {
-        let intKey = KeyValueStoreKey<Int>(stringLiteral: "intValue")
+        let intKey = KeyValueStoreKey<Int>("intValue")
         DefaultsKeyValueStore.save(123, forKey: intKey)
 
         XCTAssert(DefaultsKeyValueStore.get(forKey: intKey) == 123)
@@ -67,7 +89,7 @@ class SimpleUserDefaults_ExampleTests: XCTestCase {
     
     func testArrayOfString() {
         
-        let arrayOfStringsKey = KeyValueStoreKey<Array<String>>(stringLiteral: "arrayOfStringsKey")
+        let arrayOfStringsKey = KeyValueStoreKey<Array<String>>("arrayOfStringsKey")
 
         let stringsArray = ["123", "234", "String"]
         DefaultsKeyValueStore.save(stringsArray, forKey: arrayOfStringsKey)
@@ -76,7 +98,7 @@ class SimpleUserDefaults_ExampleTests: XCTestCase {
     }
     
     func testSetOfInts() {
-        let intsSetKey = KeyValueStoreKey<Set<Int>>(stringLiteral: "SetOfInt")
+        let intsSetKey = KeyValueStoreKey<Set<Int>>("SetOfInt")
 
         let intSet = Set([123, 234, 456])
         DefaultsKeyValueStore.save(intSet, forKey: intsSetKey)
@@ -87,7 +109,7 @@ class SimpleUserDefaults_ExampleTests: XCTestCase {
     func testRegister () {
         let stringsArray = ["123", "234", "String"]
         
-        let stringsArrayKey = KeyValueStoreKey<Array<String>>(stringLiteral: "StringsArray")
+        let stringsArrayKey = KeyValueStoreKey<Array<String>>("StringsArray")
         DefaultsKeyValueStore.register(defaultValue: stringsArray, for: stringsArrayKey)
 
         XCTAssert(DefaultsKeyValueStore.get(forKey: stringsArrayKey) == stringsArray)
@@ -95,7 +117,7 @@ class SimpleUserDefaults_ExampleTests: XCTestCase {
     
     func testCodableSubscript() {
         
-        let structsArray = KeyValueStoreKey<Array<MyStruct>>(stringLiteral: "StructsArray")
+        let structsArray = KeyValueStoreKey<Array<MyStruct>>("StructsArray")
         
         let user = MyStruct(name: "asd", secondName: "asdasd", codable: AnotherStruct(name: "asdad", secondName: "asdasd"))
         DefaultsKeyValueStore.save([user], forKey: structsArray)
@@ -109,7 +131,7 @@ class SimpleUserDefaults_ExampleTests: XCTestCase {
     }
     
     func testNSCodingNotNill() {
-        let profileKey = KeyValueStoreKey<Profile>(stringLiteral: "Profile")
+        let profileKey = KeyValueStoreKey<Profile>("Profile")
         let profile = Profile(name: "Foo", age: 23)
         
         DefaultsKeyValueStore.save(profile, forKey: profileKey)
@@ -118,7 +140,7 @@ class SimpleUserDefaults_ExampleTests: XCTestCase {
     }
     
     func testNSCodingSame () {
-        let profileKey = KeyValueStoreKey<Profile>(stringLiteral: "Profile")
+        let profileKey = KeyValueStoreKey<Profile>("Profile")
         let profile = Profile(name: "Foo", age: 23)
         
         DefaultsKeyValueStore.save(profile, forKey: profileKey)
@@ -128,7 +150,7 @@ class SimpleUserDefaults_ExampleTests: XCTestCase {
     }
     
     func testNSCodingSubscript () {
-        let profileKey = KeyValueStoreKey<Profile>(stringLiteral: "Profile")
+        let profileKey = KeyValueStoreKey<Profile>("Profile")
         let profile = Profile(name: "Foo", age: 23)
         
         DefaultsKeyValueStore[profileKey] = profile
@@ -137,10 +159,19 @@ class SimpleUserDefaults_ExampleTests: XCTestCase {
         XCTAssert((decodedProfile.name == profile.name && decodedProfile.age == profile.age))
     }
     
+    func testNSCodingUIView () {
+        let profileViewKey = KeyValueStoreKey<ProfileView>("ProfileView")
+        let profileView = ProfileView(frame: .zero, id: "123")
+        
+        DefaultsKeyValueStore[profileViewKey] = profileView
+        guard let decodedProfileView = DefaultsKeyValueStore.get(forKey: profileViewKey) else { XCTFail(); return}
+        
+        XCTAssert(decodedProfileView.viewId == profileView.viewId)
+    }
     
     func testResetStorage() {
         
-        let profileKey = KeyValueStoreKey<Profile>(stringLiteral: "Profile")
+        let profileKey = KeyValueStoreKey<Profile>("Profile")
         let profile = Profile(name: "Foo", age: 23)
         
         DefaultsKeyValueStore[profileKey] = profile
@@ -154,7 +185,7 @@ class SimpleUserDefaults_ExampleTests: XCTestCase {
     }
     
     func testDefaultPrimitiveValue() {
-        let intKeyWithDefaultValue = KeyValueStoreKey<Int>(stringLiteral: "IntWithDefault", defaultValue: 222)
+        let intKeyWithDefaultValue = KeyValueStoreKey<Int>("IntWithDefault", defaultValue: 222)
         guard let decodedIntDefault = DefaultsKeyValueStore.get(forKey: intKeyWithDefaultValue) else { XCTFail(); return}
         
         XCTAssert(decodedIntDefault == 222)
@@ -163,7 +194,7 @@ class SimpleUserDefaults_ExampleTests: XCTestCase {
     
     func testDefaultStructValue() {
         let DefaultStruct = AnotherStruct(name: "DefaultName", secondName: "DefaultSecondName")
-        let structKeyWithDefaultValue = KeyValueStoreKey<AnotherStruct>(stringLiteral: "defaultStruct", defaultValue: DefaultStruct)
+        let structKeyWithDefaultValue = KeyValueStoreKey<AnotherStruct>("defaultStruct", defaultValue: DefaultStruct)
         
         guard let decodedStructDefault = DefaultsKeyValueStore.get(forKey: structKeyWithDefaultValue) else { XCTFail(); return}
         XCTAssert(decodedStructDefault.name == "DefaultName" && decodedStructDefault.secondName == "DefaultSecondName")

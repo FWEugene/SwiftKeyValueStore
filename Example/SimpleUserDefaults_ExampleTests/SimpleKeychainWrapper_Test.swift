@@ -7,7 +7,7 @@
 //
 
 import XCTest
-import SimpleUserDefaults
+@testable import SwiftKeyValueStore
 import SwiftKeychainWrapper
 
 private var SecureKeyValueStore = KeychainWrapper.standard
@@ -15,7 +15,7 @@ private var SecureKeyValueStore = KeychainWrapper.standard
 class SimpleKeychainWrapper_Test: XCTestCase {
     
     func testCodableStruct() {
-        let structKey = KeyValueStoreKey<MyStruct>(stringLiteral: "structValue")
+        let structKey = KeyValueStoreKey<MyStruct>("structValue")
         
         let user = MyStruct(name: "asd", secondName: "asdasd", codable: AnotherStruct(name: "asdad", secondName: "asdasd"))
         SecureKeyValueStore.save(user, forKey: structKey)
@@ -24,7 +24,7 @@ class SimpleKeychainWrapper_Test: XCTestCase {
     }
     
     func testInt() {
-        let intKey = KeyValueStoreKey<Int>(stringLiteral: "intValue")
+        let intKey = KeyValueStoreKey<Int>("intValue")
         SecureKeyValueStore.save(123, forKey: intKey)
         
         XCTAssert(SecureKeyValueStore.get(forKey: intKey) == 123)
@@ -32,7 +32,7 @@ class SimpleKeychainWrapper_Test: XCTestCase {
     
     func testArrayOfString() {
         
-        let arrayOfStringsKey = KeyValueStoreKey<Array<String>>(stringLiteral: "arrayOfStringsKey")
+        let arrayOfStringsKey = KeyValueStoreKey<Array<String>>("arrayOfStringsKey")
         
         let stringsArray = ["123", "234", "String"]
         SecureKeyValueStore.save(stringsArray, forKey: arrayOfStringsKey)
@@ -41,7 +41,7 @@ class SimpleKeychainWrapper_Test: XCTestCase {
     }
     
     func testSetOfInts() {
-        let intsSetKey = KeyValueStoreKey<Set<Int>>(stringLiteral: "SetOfInt")
+        let intsSetKey = KeyValueStoreKey<Set<Int>>("SetOfInt")
         
         let intSet = Set([123, 234, 456])
         SecureKeyValueStore.save(intSet, forKey: intsSetKey)
@@ -52,7 +52,7 @@ class SimpleKeychainWrapper_Test: XCTestCase {
     func testRegister () {
         let stringsArray = ["123", "234", "String"]
         
-        let stringsArrayKey = KeyValueStoreKey<Array<String>>(stringLiteral: "StringsArray")
+        let stringsArrayKey = KeyValueStoreKey<Array<String>>("StringsArray")
         SecureKeyValueStore.register(defaultValue: stringsArray, for: stringsArrayKey)
         
         XCTAssert(SecureKeyValueStore.get(forKey: stringsArrayKey) == stringsArray)
@@ -60,7 +60,7 @@ class SimpleKeychainWrapper_Test: XCTestCase {
     
     func testCodableSubscript() {
         
-        let structsArray = KeyValueStoreKey<Array<MyStruct>>(stringLiteral: "StructsArray")
+        let structsArray = KeyValueStoreKey<Array<MyStruct>>("StructsArray")
         
         let user = MyStruct(name: "asd", secondName: "asdasd", codable: AnotherStruct(name: "asdad", secondName: "asdasd"))
         SecureKeyValueStore.save([user], forKey: structsArray)
@@ -74,7 +74,7 @@ class SimpleKeychainWrapper_Test: XCTestCase {
     }
     
     func testNSCodingNotNill() {
-        let profileKey = KeyValueStoreKey<Profile>(stringLiteral: "Profile")
+        let profileKey = KeyValueStoreKey<Profile>("Profile")
         let profile = Profile(name: "Foo", age: 23)
         
         SecureKeyValueStore.save(profile, forKey: profileKey)
@@ -83,7 +83,7 @@ class SimpleKeychainWrapper_Test: XCTestCase {
     }
     
     func testNSCodingSame () {
-        let profileKey = KeyValueStoreKey<Profile>(stringLiteral: "Profile")
+        let profileKey = KeyValueStoreKey<Profile>("Profile")
         let profile = Profile(name: "Foo", age: 23)
         
         SecureKeyValueStore.save(profile, forKey: profileKey)
@@ -93,7 +93,7 @@ class SimpleKeychainWrapper_Test: XCTestCase {
     }
     
     func testNSCodingSubscript () {
-        let profileKey = KeyValueStoreKey<Profile>(stringLiteral: "Profile")
+        let profileKey = KeyValueStoreKey<Profile>("Profile")
         let profile = Profile(name: "Foo", age: 23)
         
         SecureKeyValueStore[profileKey] = profile
@@ -105,7 +105,7 @@ class SimpleKeychainWrapper_Test: XCTestCase {
     
     func testResetStorage() {
         
-        let profileKey = KeyValueStoreKey<Profile>(stringLiteral: "Profile")
+        let profileKey = KeyValueStoreKey<Profile>("Profile")
         let profile = Profile(name: "Foo", age: 23)
         
         SecureKeyValueStore[profileKey] = profile
@@ -119,7 +119,8 @@ class SimpleKeychainWrapper_Test: XCTestCase {
     }
     
     func testDefaultPrimitiveValue() {
-        let intKeyWithDefaultValue = KeyValueStoreKey<Int>(stringLiteral: "IntWithDefault", defaultValue: 222)
+        
+        let intKeyWithDefaultValue = KeyValueStoreKey<Int>("IntWithDefault", defaultValue: 222)
         guard let decodedIntDefault = SecureKeyValueStore.get(forKey: intKeyWithDefaultValue) else { XCTFail(); return}
         
         XCTAssert(decodedIntDefault == 222)
@@ -128,7 +129,7 @@ class SimpleKeychainWrapper_Test: XCTestCase {
     
     func testDefaultStructValue() {
         let DefaultStruct = AnotherStruct(name: "DefaultName", secondName: "DefaultSecondName")
-        let structKeyWithDefaultValue = KeyValueStoreKey<AnotherStruct>(stringLiteral: "defaultStruct", defaultValue: DefaultStruct)
+        let structKeyWithDefaultValue = KeyValueStoreKey<AnotherStruct>("defaultStruct", defaultValue: DefaultStruct)
         
         guard let decodedStructDefault = SecureKeyValueStore.get(forKey: structKeyWithDefaultValue) else { XCTFail(); return}
         XCTAssert(decodedStructDefault.name == "DefaultName" && decodedStructDefault.secondName == "DefaultSecondName")

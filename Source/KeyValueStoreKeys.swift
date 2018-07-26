@@ -13,7 +13,7 @@ open class KeyValueStoreKeys {
     fileprivate init() {}
 }
 
-final public class KeyValueStoreKey<Type>: KeyValueStoreKeys, Hashable, ExpressibleByStringLiteral {
+final public class KeyValueStoreKey<Type>: KeyValueStoreKeys, Hashable {
    
     public typealias StringLiteralType = String
     public static func == (lhs: KeyValueStoreKey<Type>, rhs: KeyValueStoreKey<Type>) -> Bool {
@@ -24,13 +24,13 @@ final public class KeyValueStoreKey<Type>: KeyValueStoreKeys, Hashable, Expressi
     public var rawValue: String
     public var defaultValue: Type?
     
-    public init(stringLiteral value: String) {
-        self.rawValue = value
-        self.hashValue = value.hashValue
+    public init(_ key: String) {
+        self.rawValue = key
+        self.hashValue = key.hashValue
     }
     
-    public convenience init(stringLiteral value: String, defaultValue: Type) {
-        self.init(stringLiteral: value)
+    public convenience init(_ key: String, defaultValue: Type) {
+        self.init(key)
         self.defaultValue = defaultValue
     }
 }
@@ -38,12 +38,12 @@ final public class KeyValueStoreKey<Type>: KeyValueStoreKeys, Hashable, Expressi
 
 public extension String {
     
-    public func toKey<ValueType>(default value: ValueType) -> KeyValueStoreKey<ValueType> {
-        return KeyValueStoreKey<ValueType>(stringLiteral: self, defaultValue: value)
+    public func toKeyWith<ValueType>(defaultValue value: ValueType) -> KeyValueStoreKey<ValueType> {
+        return KeyValueStoreKey<ValueType>(self, defaultValue: value)
     }
     
-    public func toKeyWithType<ValueType>(_ type: ValueType.Type) ->  KeyValueStoreKey<ValueType> {
-        return KeyValueStoreKey<ValueType>(stringLiteral: self)
+    public func toKeyWith<ValueType>(type: ValueType.Type) ->  KeyValueStoreKey<ValueType> {
+        return KeyValueStoreKey<ValueType>(self)
     }
 }
 
