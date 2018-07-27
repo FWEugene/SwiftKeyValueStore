@@ -10,7 +10,7 @@
 # Version 0.1
 ### Features
 
-**There's only two steps to using SwiftKeyValueStore:**
+**There's only three steps to using SwiftKeyValueStore:**
 
 Step 1: Chose Storage type `UserDefaults`. Use `standard` shared instance or create new instance. 
 
