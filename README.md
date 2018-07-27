@@ -65,7 +65,7 @@ Define your user keys for your own convinience:
 ```swift
 let userKey = KeyValueStoreKey<User>("userKey")
 let colorKey = "ColorKey".toKeyWith(type: UIColor)
-let moviesKey = "MoviesKey".toKeyWith(defaultValue: Array<Movies>)
+let profilesKey = "ProfilesKey".toKeyWith(defaultValue: Array<Profile>())
 ```
 
 Create a `KeyValueStoreKey` object, provide the type of the value you want to store and the key name in parentheses.
