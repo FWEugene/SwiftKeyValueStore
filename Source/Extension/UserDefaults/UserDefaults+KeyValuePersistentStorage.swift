@@ -30,7 +30,7 @@ extension KeyValuePersistentStorage where Self: UserDefaults {
     }
     
     /// Delete all persisted items from the UserDefaults of Main Bundle persistent Domain. synchronize() will be called every time this method called.
-    ///
+    /// Note: Please override this method to implement storage reset for non `standard` instance of UserDefaults.
     public func resetStorage() {
         guard let bundle = Bundle.main.bundleIdentifier else { return }
         removePersistentDomain(forName: bundle)
