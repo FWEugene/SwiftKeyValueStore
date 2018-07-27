@@ -88,8 +88,10 @@ DefaultsKeyValueStore[colorKey] // => UIColor.red, typed as UIColor?
 // store securely in KeyChain
 KeychainKeyValueStore[userKey] = User(firstName: "Yuriy", 
                                       lastName: "Gagarin") // struct User has to conform `Codable` protocol 
+                                      
 KeychainKeyValueStore[userKey] // => (firstName: "Yuriy", 
-                                      lastName: "Gagarin"), typed as User?
+                               //     lastName: "Gagarin"), typed as User?
+                                      
 ```
 
 The compiler would not let you to set a wrong value type, and alwasy returns expected optional type.
