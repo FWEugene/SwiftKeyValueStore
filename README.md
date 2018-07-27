@@ -46,12 +46,12 @@ DefaultsKeyValueStore[.onboardingIsEnabled] = true
 DefaultsKeyValueStore[.launchCount] += 1
 
 // Use and modify typed arrays
-Defaults[.movies].append("StarWars")
-Defaults[.movies][0] += " Last Jedi"
+DefaultsKeyValueStore[.movies].append("StarWars")
+DefaultsKeyValueStore[.movies][0] += " Last Jedi"
 
 // Works with types that conform Codable or NSCoding
-Defaults[.color] = UIColor.white
-Defaults[.color]?.whiteComponent // => 1.0
+DefaultsKeyValueStore[.color] = UIColor.white
+DefaultsKeyValueStore[.color]?.whiteComponent // => 1.0
 ```
 
 The convenient dot syntax is only available if you define your keys by extending `KeyValueStoreKeys` class. Or just pass the `KeyValueStoreKey` value in square brackets. Or use String to create key with specified `ValutType` or default Value. 
