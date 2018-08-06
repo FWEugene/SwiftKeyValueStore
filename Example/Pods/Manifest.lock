@@ -1,6 +1,6 @@
 PODS:
   - SwiftKeychainWrapper (3.0.1)
-  - SwiftKeyValueStore (0.1.0):
+  - SwiftKeyValueStore (0.1.2):
     - SwiftKeychainWrapper
 
 DEPENDENCIES:
@@ -16,8 +16,8 @@ EXTERNAL SOURCES:
 
 SPEC CHECKSUMS:
   SwiftKeychainWrapper: 38952a3636320ae61bad3513cadd870929de7a4a
-  SwiftKeyValueStore: d9f7dabde36145ff15b90dd836f6b2289b3abc94
+  SwiftKeyValueStore: e81fc7d69b773c89e129711c2f8f6bb658bdee9e
 
-PODFILE CHECKSUM: c7dd683691ece130a7b6f594640effa65fc24bae
+PODFILE CHECKSUM: afc1055d5a5d534b7e45e418301d18f2937c8bb8
 
 COCOAPODS: 1.5.3
