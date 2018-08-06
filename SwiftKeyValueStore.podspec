@@ -9,7 +9,7 @@ Pod::Spec.new do |s|
   s.description  = "Use SwiftKeyValueStore api if you want type-safe, easy to use database to persist data across launches of your app."
   s.homepage     = "https://github.com/FWEugene/SwiftKeyValueStore"
   s.author       = { "Yevgeniy Prokoshev" => "yevgeniy@futureworkshops.com" }
-  s.platform     = :ios, "11.0"
+  s.platform     = :ios, "10.0"
   s.source       = { :git => 'https://github.com/FWEugene/SwiftKeyValueStore.git', :tag => s.version.to_s  }
   s.requires_arc = true
   s.swift_version = "4.0"
