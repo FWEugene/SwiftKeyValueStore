@@ -2,7 +2,7 @@
 Pod::Spec.new do |s|
 
   s.name         = "SwiftKeyValueStore"
-  s.version      = "0.1.2"
+  s.version      = "0.1.3"
   s.license      = { :type => 'MIT', :file => 'LICENSE' }
 
   s.summary      = "Simple Key Value Store. Wrapper for UserDefaults and KeyChain. Written in Swift."
