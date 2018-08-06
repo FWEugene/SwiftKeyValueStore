@@ -26,7 +26,7 @@ extension KeyValuePersistentStorage where Self: KeychainWrapper {
     /// Returns a Data object from KeyChain for provided key
     ///
     /// - Parameter key: key to lookup for data
-    /// - Returns: Data assosiated with key if exist. If no data exists, or the data found cannot be encoded as a string, returns nil.
+    /// - Returns: Data assosiated with key if exist. If no data exists, or the data found cannot be decoded, returns nil.
     public func data(forKey key: String) -> Data? {
         return self.data(forKey: key, withAccessibility: nil)
     }
